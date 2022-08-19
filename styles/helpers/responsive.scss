@@ -1,0 +1,34 @@
+@mixin screenXS {
+  @media (max-width: 320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    @content;
+  }
+}
+
+@mixin screenSM {
+  @media (max-width: 480px) {
+    /* smartphones, Android phones, landscape iPhone */
+    @content;
+  }
+}
+
+@mixin screenLG {
+  @media (max-width: 801px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    @content;
+  }
+}
+
+@mixin screenXL {
+  @media (max-width: 1025px) {
+    /* big landscape tablets, laptops, and desktops */
+    @content;
+  }
+}
+
+@mixin screenXXL {
+  @media (max-width: 1281px) {
+    /* hi-res laptops and desktops */
+    @content;
+  }
+}

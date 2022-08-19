@@ -6,7 +6,7 @@ const SectionHero = () => {
       <div className="container text-center" data-aos="zoom-in">
         <h1>Portfolio</h1>
         <p className="mt-3">
-          This is a portfolio page to display the results of the products that I
+          This is a portfolio page to display the results of the products that i
           have made
         </p>
       </div>

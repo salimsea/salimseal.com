@@ -25,7 +25,7 @@ const Detail = (data) => {
       pageTitle={`Detail Blog : ${data.blog.item?.title || "loading"} `}
       pageImage={`${data.blog.item?.thumbnail}`}
       pageDescription={`${data.blog.item?.postContentText}`}
-      pageContent={`${data.blog.item?.postContent}`}
+      pageContent={`${data.blog.item?.postContentText}`}
     >
       <ComponentBlogDetail slug={slug} />
     </Layout>

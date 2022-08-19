@@ -95,14 +95,14 @@ export default async function handler(req, res) {
               };
               ret = {
                 error: false,
-                message: start,
+                message: null,
                 data: retData,
               };
             });
           } catch (err) {
             ret = {
               error: true,
-              message: "data not found" + start,
+              message: "data not found",
               data: [],
             };
           }

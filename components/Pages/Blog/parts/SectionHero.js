@@ -6,8 +6,9 @@ const SectionHero = () => {
       <div className="container text-center" data-aos="zoom-in">
         <h1>Blogger</h1>
         <p className="mt-3">
-          This is a portfolio page to display the results of the products that I
-          have made
+          This page is for sharing knowledge, news about technology and coding{" "}
+          <br />
+          (content by: blogger.com)
         </p>
       </div>
     </section>

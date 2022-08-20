@@ -10,7 +10,6 @@ import { setFormBlog } from "redux/slice/blogSlice";
 
 const SectionEntry = () => {
   const { dataBlogs, formBlog } = useSelector((state) => state.blog);
-  console.log(formBlog.formBlog.search);
   const dispatch = useDispatch();
   const datas = !formBlog.formBlog?.search
     ? dataBlogs.items?.contents

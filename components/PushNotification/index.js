@@ -9,7 +9,6 @@ function PushNotification({ children }) {
   const router = useRouter();
   useEffect(() => {
     setToken();
-    console.log("woi");
 
     // Event listener that listens for the push notification event in the background
     if ("serviceWorker" in navigator) {
@@ -27,7 +26,7 @@ function PushNotification({ children }) {
       try {
         const token = await firebaseCloudMessaging.init();
         if (token) {
-          console.log("token", token);
+          // console.log("token", token);
         }
       } catch (error) {
         console.log(error);

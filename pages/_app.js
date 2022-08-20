@@ -43,7 +43,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <ProgressBar isAnimating={isAnimating} />
-      <Component {...pageProps} />
+      <PushNotification>
+        <Component {...pageProps} />
+      </PushNotification>
     </Provider>
   );
 }

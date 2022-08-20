@@ -7,7 +7,6 @@ const ComponentBlog = () => {
     <>
       <SectionHero />
       <SectionEntry />
-      {/* <SectionCategory /> */}
     </>
   );
 };

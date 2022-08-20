@@ -5,9 +5,10 @@ import store from "redux/store";
 import "styles/_base.scss";
 import "styles/_globals.scss";
 import "aos/dist/aos.css";
+import "react-toastify/dist/ReactToastify.css";
 import { useProgressStore } from "helpers/common";
 import { useRouter } from "next/router";
-import { ProgressBar } from "components";
+import { ProgressBar, PushNotification } from "components";
 
 function MyApp({ Component, pageProps }) {
   const setIsAnimating = useProgressStore((state) => state.setIsAnimating);

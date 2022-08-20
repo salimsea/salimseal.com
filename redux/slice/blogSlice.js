@@ -12,6 +12,7 @@ export const initialState = {
     error: false,
     msg: "null",
   },
+  formBlog: {},
 };
 
 // our slice
@@ -29,8 +30,17 @@ const blogSlice = createSlice({
       state.dataBlog.items = payload.items;
       state.dataBlog.msg = payload.msg;
     },
+    setFormBlog: (state, { payload }) => {
+      state.formBlog = {
+        ...state.formBlog,
+        formBlog: {
+          ...state.formBlog,
+          [payload.formType]: payload.formValue,
+        },
+      };
+    },
   },
 });
 
-export const { setDataBlogs, setDataBlog } = blogSlice.actions;
+export const { setDataBlogs, setDataBlog, setFormBlog } = blogSlice.actions;
 export default blogSlice.reducer;

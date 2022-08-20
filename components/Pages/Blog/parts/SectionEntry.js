@@ -13,12 +13,13 @@ const SectionEntry = () => {
     <section className={styles["blog"]}>
       <div className="container">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-8 mb-2">
             <div>
               <input
                 type="text"
                 placeholder="Enter you keyword..."
                 className={`form-control ${styles["textinput-search"]}`}
+                onChange={(e) => console.log(e.target.value)}
               />
             </div>
             <div className="row mt-5">

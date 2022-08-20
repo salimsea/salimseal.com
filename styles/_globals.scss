@@ -216,6 +216,12 @@
     background-color: $snow !important;
 }
 
+.title-notif-toast {
+    font-family: 'DM Mono' !important;
+    font-weight: 500 !important;
+    font-size: 20px;
+    // color: #00;
+}
 
 @include screenLG() {
     .header {

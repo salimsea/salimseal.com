@@ -112,3 +112,12 @@
         }
     }
 }
+
+
+@include screenLG() {
+    .hero {
+        p {
+            max-width: 90%;
+        }
+    }
+}

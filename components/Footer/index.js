@@ -15,9 +15,7 @@ const Footer = () => {
                 width="50"
                 className="img-fluid"
               />
-              <h4 className="text-copyright-salim mt-2">
-                salimsea.netlify.app
-              </h4>
+              <h4 className="text-copyright-salim mt-2">salimseal.com</h4>
               <button
                 onClick={() => (window.location = "#")}
                 className="btn-costum-primary-outline px-4 py-1 mt-2 mb-3"
@@ -31,21 +29,15 @@ const Footer = () => {
             <ul>
               <li>
                 <div className="bulet-white"></div>
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li>
+                <div className="bulet-white"></div>
                 <Link href={"/portfolio"}>Portfolio</Link>
               </li>
               <li>
                 <div className="bulet-white"></div>
-                <Link href="https://salim-tekno.blogspot.com/" target="_blank">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <div className="bulet-white"></div>
-                <Link href={"/tools"}>Tools</Link>
-              </li>
-              <li>
-                <div className="bulet-white"></div>
-                <Link href={"/login"}>Admin Console</Link>
+                <Link href={"/blog"}>Blog</Link>
               </li>
             </ul>
           </div>

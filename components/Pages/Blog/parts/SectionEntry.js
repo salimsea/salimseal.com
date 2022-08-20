@@ -1,30 +1,45 @@
 import React, { useEffect } from "react";
-import { BlogDummy1 } from "assets";
+import { BlogDummy1, IMGNotFound } from "assets";
 import Image from "next/image";
 import styles from "styles/Blog.module.scss";
 import { IoTimeOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataBlogs } from "redux/action/blogAction";
 import Link from "next/link";
+import { setFormBlog } from "redux/slice/blogSlice";
 
 const SectionEntry = () => {
-  const { dataBlogs } = useSelector((state) => state.blog);
+  const { dataBlogs, formBlog } = useSelector((state) => state.blog);
+  console.log(formBlog.formBlog.search);
+  const dispatch = useDispatch();
+  const datas = !formBlog.formBlog?.search
+    ? dataBlogs.items?.contents
+    : dataBlogs.items?.contents?.filter((i) =>
+        i?.title
+          ?.toLowerCase()
+          .includes(formBlog.formBlog?.search.toLowerCase())
+      );
   return (
     <section className={styles["blog"]}>
       <div className="container">
         <div className="row">
-          <div className="col-md-8 mb-2">
+          <div className="col-md-8 mb-4">
             <div>
               <input
                 type="text"
                 placeholder="Enter you keyword..."
                 className={`form-control ${styles["textinput-search"]}`}
-                onChange={(e) => console.log(e.target.value)}
+                value={formBlog.formBlog?.search}
+                onChange={(e) =>
+                  dispatch(
+                    setFormBlog({ name: "search", value: e.target.value })
+                  )
+                }
               />
             </div>
             <div className="row mt-5">
-              {!dataBlogs.error &&
-                dataBlogs.items?.contents?.map((v, i) => {
+              {!dataBlogs.error && datas?.length !== 0 ? (
+                datas?.map((v, i) => {
                   return (
                     <div key={i} className="col-md-6">
                       <Link href={`blog/${v.slug}`}>
@@ -53,7 +68,23 @@ const SectionEntry = () => {
                       </Link>
                     </div>
                   );
-                })}
+                })
+              ) : (
+                <center>
+                  <Image
+                    src={IMGNotFound}
+                    width={150}
+                    height={200}
+                    className={"pt-5"}
+                  />
+                  <p className="pt-5 pb-5">
+                    Data not found :{" "}
+                    <u>
+                      <b>{formBlog.formBlog?.search}</b>
+                    </u>
+                  </p>
+                </center>
+              )}
             </div>
           </div>
           <div className="col-md-4">

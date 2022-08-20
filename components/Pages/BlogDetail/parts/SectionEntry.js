@@ -16,7 +16,7 @@ const SectionEntry = ({ slug }) => {
     <section className={styles["blog"]}>
       <div className="container">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-8 mb-4">
             <div className={styles["card-detail-content"]}>
               {!dataBlog.error && (
                 <>

@@ -12,7 +12,11 @@ export const initialState = {
     error: false,
     msg: "null",
   },
-  formBlog: {},
+  formBlog: {
+    formBlog: {
+      search: "",
+    },
+  },
 };
 
 // our slice
@@ -32,10 +36,9 @@ const blogSlice = createSlice({
     },
     setFormBlog: (state, { payload }) => {
       state.formBlog = {
-        ...state.formBlog,
         formBlog: {
           ...state.formBlog,
-          [payload.formType]: payload.formValue,
+          [payload.name]: payload.value,
         },
       };
     },

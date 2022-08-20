@@ -94,32 +94,34 @@ const Header = () => {
 
       <Collapse isOpen={isOpen} navbar>
         <MyNav />
-        <Button
-          onClick={() =>
-            window.location.replace(
-              "https://wa.me/6282112235774?text=Assalamualaikum%20Warahmatullahi%20Wabarakatuh"
-            )
-          }
-          className="btn-costum-primary-outline ms-4 px-5 me-4"
-        >
-          <FaPhoneAlt color="#fff" /> CONTACT ME
-        </Button>
-        <button
-          className="btn btn-switch-darkmode"
-          onClick={() => setDarkTheme(!darkTheme)}
-        >
-          {darkTheme ? (
-            <>
-              <FaSun color="yellow" size={15} />
-              <p>light</p>
-            </>
-          ) : (
-            <>
-              <FaMoon color="grey" size={15} />
-              <p>dark</p>
-            </>
-          )}
-        </button>
+        <div className="card-button-darkmode">
+          <Button
+            onClick={() =>
+              window.location.replace(
+                "https://wa.me/6282112235774?text=Assalamualaikum%20Warahmatullahi%20Wabarakatuh"
+              )
+            }
+            className="btn-costum-primary-outline ms-4 px-5 me-4"
+          >
+            <FaPhoneAlt color="#fff" /> CONTACT ME
+          </Button>
+          <button
+            className="btn btn-switch-darkmode"
+            onClick={() => setDarkTheme(!darkTheme)}
+          >
+            {darkTheme ? (
+              <>
+                <FaSun color="yellow" size={15} />
+                <p>light</p>
+              </>
+            ) : (
+              <>
+                <FaMoon color="grey" size={15} />
+                <p>dark</p>
+              </>
+            )}
+          </button>
+        </div>
       </Collapse>
     </Navbar>
   );
@@ -137,10 +139,6 @@ const jsonMenus = [
   {
     title: "Blog",
     path: "/blog",
-  },
-  {
-    title: "Tools",
-    path: "/tools",
   },
 ];
 

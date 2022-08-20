@@ -28,6 +28,7 @@ import LogoHtml5 from "./images/logo-html5.png";
 import ILNotFound from "./images/notfound.png";
 import BlogDummy1 from "./images/blog1.png";
 import BlogDummy2 from "./images/blog2.png";
+import IMGNotFound from "./images/img-notfound.png";
 export {
   Logo,
   ProjectDummy1,
@@ -59,4 +60,5 @@ export {
   ILNotFound,
   BlogDummy1,
   BlogDummy2,
+  IMGNotFound,
 };

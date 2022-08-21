@@ -79,12 +79,19 @@ const Header = () => {
     >
       <NavbarBrand>
         <Link href={"/"}>
-          <Image
+          {/* <Image
             src={Logo}
             width={50}
             height={50}
             className="img-fluid"
             alt=""
+          /> */}
+          <img
+            src={
+              "https://user-images.githubusercontent.com/49223890/184792742-185ddb27-fdea-4c0a-b176-67638223f9a0.png"
+            }
+            width="50"
+            className="img-fluid"
           />
         </Link>
       </NavbarBrand>

@@ -39,6 +39,10 @@ const Footer = () => {
                 <div className="bulet-white"></div>
                 <Link href={"/blog"}>Blog</Link>
               </li>
+              <li>
+                <div className="bulet-white"></div>
+                <a href={"/sitemap.xml"}>Sitemap</a>
+              </li>
             </ul>
           </div>
           <div className="col-md-2">

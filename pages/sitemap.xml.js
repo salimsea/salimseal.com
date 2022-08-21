@@ -20,15 +20,15 @@ export const getServerSideProps = async ({ res }) => {
       return `${process.env.BASE_URL}/${staticPagePath.replace(".js", "")}`;
     });
 
-  const resBlog = await axios.post(`${process.env.BASE_URL}/api/blog`, {
-    start: "1",
-    max: "1000",
-  });
-  const blog = await resBlog.data.data;
   const dynamicPaths = [];
-  blog.retContents?.map((item) => {
-    dynamicPaths.push(`${process.env.BASE_URL}/blog/${item.slug}`);
-  });
+  // const resBlog = await axios.post(`${process.env.BASE_URL}/api/blog`, {
+  //   start: "1",
+  //   max: "1000",
+  // });
+  // const blog = await resBlog.data.data;
+  // blog.retContents?.map((item) => {
+  //   dynamicPaths.push(`${process.env.BASE_URL}/blog/${item.slug}`);
+  // });
 
   const allPaths = [...staticPaths, ...dynamicPaths];
 

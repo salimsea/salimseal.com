@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-todoapp",
-  "version": "0.1.0",
+  "name": "salimseal.com-portfolio-kits",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,6 +16,7 @@
     "bootstrap": "^5.2.0",
     "firebase": "7.6.2",
     "formidable": "^2.0.1",
+    "fs": "^0.0.1-security",
     "localforage": "^1.10.0",
     "next": "12.2.5",
     "next-redux-wrapper": "^7.0.5",

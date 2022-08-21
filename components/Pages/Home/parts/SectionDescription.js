@@ -146,8 +146,9 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          2019 : (Dicoding) Course ID CAMP, Making applications
-                          using JAVA
+                          2019 : (
+                          <a href="https://www.dicoding.com/">Dicoding</a>)
+                          Course ID CAMP, Making applications using JAVA
                         </p>
                       </li>
                       <li>
@@ -155,8 +156,9 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          2019 : (YouTube) Mentor Prawito Hudoro, Gojek
-                          application clone using React Native
+                          2019 : (<a href="youtube.com">YouTube</a>) Mentor
+                          Prawito Hudoro, Gojek application clone using React
+                          Native
                         </p>
                       </li>
                       <li>
@@ -164,9 +166,12 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          2019 - 2020 : (BuildWithAngga) Mentor Prawito Hudoro,
-                          Create a My Doctor mobile application, using React
-                          Native & Firebase
+                          2019 - 2020 : (
+                          <a href="https://buildwithangga.com/">
+                            BuildWithAngga
+                          </a>
+                          ) Mentor Prawito Hudoro, Create a My Doctor mobile
+                          application, using React Native & Firebase
                         </p>
                       </li>
                       <li>
@@ -174,8 +179,8 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          2020 : (YouTube) Mentor Prawito Hudoro, Made web
-                          application using REACT JS
+                          2020 : (<a href="youtube.com">YouTube</a>) Mentor
+                          Prawito Hudoro, Made web application using REACT JS
                         </p>
                       </li>
                       <li>
@@ -183,9 +188,12 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          2021 - 2022 : (BuildWithAngga) Mr. Angga mentor,
-                          slicing / Creating a web front-end with the follow
-                          SKETCH
+                          2021 - 2022 : ({" "}
+                          <a href="https://buildwithangga.com/">
+                            BuildWithAngga
+                          </a>
+                          ) Mr. Angga mentor, slicing / Creating a web front-end
+                          with the follow SKETCH
                         </p>
                       </li>
                     </ul>
@@ -197,7 +205,10 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          PT Sawerigading Multi Kreasi <br />
+                          <a href="https://swg.co.id">
+                            PT Sawerigading Multi Kreasi
+                          </a>
+                          <br />
                           <small>
                             <FaRegClock color="#2C2C2C" /> Apr 2019 - Present
                           </small>
@@ -212,7 +223,10 @@ const SectionDescription = ({ styles }) => {
                           <FaArrowRight color="#FFFFFF" size={15} />
                         </div>
                         <p>
-                          PT Digital Dropship Indonesia <br />
+                          <a href="https://dropshipedia.id">
+                            PT Digital Dropship Indonesia
+                          </a>
+                          <br />
                           <small>
                             <FaRegClock color="#2C2C2C" /> Jan 2019 - Present
                           </small>

@@ -1,25 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "styles/Blog.module.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { IoTimeOutline } from "react-icons/io5";
 import Link from "next/link";
-import { getDataBlog } from "redux/action/blogAction";
+import { DiscussionEmbed } from "disqus-react";
 
-const SectionEntry = ({ slug }) => {
-  const { dataBlog, dataBlogs } = useSelector((state) => state.blog);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getDataBlog(slug));
-  // }, [dispatch]);
+const SectionEntry = () => {
+  const { dataBlog } = useSelector((state) => state.blog);
   return (
     <section className={styles["blog"]}>
       <div className="container">
         <div className="row">
           <div className="col-md-8 mb-4">
-            <div className={styles["card-detail-content"]}>
-              {!dataBlog.error && (
-                <>
+            {!dataBlog.error && (
+              <>
+                <div className={styles["card-detail-content"]}>
                   <center>
                     <h2>{dataBlog.items.item?.title}</h2>
                     <p>
@@ -41,9 +37,12 @@ const SectionEntry = ({ slug }) => {
                       __html: dataBlog.items.item?.postContent,
                     }}
                   />
-                </>
-              )}
-            </div>
+                </div>
+                <div className={`${styles["card-detail-content"]} mt-4`}>
+                  <ItemDiscuss data={dataBlog} />
+                </div>
+              </>
+            )}
           </div>
           <div className="col-md-4">
             <div className={styles["card-recent-post"]}>
@@ -80,8 +79,8 @@ const SectionEntry = ({ slug }) => {
               <h3>Category</h3>
               <div className="mt-3">
                 <ul>
-                  {!dataBlogs.error &&
-                    dataBlogs.items?.category?.map((v, i) => {
+                  {!dataBlog.error &&
+                    dataBlog.items?.category?.map((v, i) => {
                       return (
                         <li key={i}>
                           <div className="bulet--small"></div>
@@ -96,6 +95,21 @@ const SectionEntry = ({ slug }) => {
         </div>
       </div>
     </section>
+  );
+};
+
+const ItemDiscuss = ({ data }) => {
+  const disqusShortname = "salimseal";
+  const disqusConfig = {
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${data.items.item?.slug}`,
+    identifier: data.items.item?.slug,
+    title: data.items.item?.title,
+  };
+
+  return (
+    <div>
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+    </div>
   );
 };
 

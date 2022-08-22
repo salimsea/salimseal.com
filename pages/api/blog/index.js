@@ -32,10 +32,7 @@ export default async function handler(req, res) {
           try {
             parseString(data, function (err, result) {
               var contents = result.feed["entry"],
-                // retContents = [],
                 category = result.feed["category"];
-              // retCategory = [],
-              // ret = {};
 
               for (const item of contents) {
                 var postUrl = "";
@@ -72,8 +69,10 @@ export default async function handler(req, res) {
 
                 var created = new Date(item["published"]);
                 var updated = new Date(item["updated"]);
+                var idBlog = `${created.getDate()}${created.getMonth()}${created.getFullYear()}${created.getHours()}${created.getMinutes()}`;
 
                 retContents.push({
+                  id: idBlog,
                   slug: `${FUNCTextToSlug(item["title"][0]._)}`,
                   created: `${created.toLocaleString("en-US")}`,
                   updated: `${updated.toLocaleString("en-US")}`,

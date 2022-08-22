@@ -18,7 +18,9 @@ export default async function handler(req, res) {
 
     parseString(response, function (err, result) {
       var contents = result.feed["entry"],
+        category = result.feed["category"],
         retContents = [],
+        retCategory = [],
         retRecentPost = [],
         ret = {};
       for (const item of contents) {
@@ -56,8 +58,10 @@ export default async function handler(req, res) {
         var titleSmall = entryShort.substring(0, entryEnd) + "...";
         var created = new Date(item["published"]);
         var updated = new Date(item["updated"]);
+        var idBlog = `${created.getDate()}${created.getMonth()}${created.getFullYear()}${created.getHours()}${created.getMinutes()}`;
 
         retRecentPost.push({
+          idBlog,
           slug: `${slug}`,
           created: `${created.toLocaleString("en-US")}`,
           updated: `${updated.toLocaleString("en-US")}`,
@@ -70,9 +74,11 @@ export default async function handler(req, res) {
 
         if (slug === id) {
           retContents.push({
+            id: idBlog,
             created: `${created.toLocaleString("en-US")}`,
             updated: `${updated.toLocaleString("en-US")}`,
             title: `${item["title"][0]._}`,
+            slug: `${FUNCTextToSlug(item["title"][0]._)}`,
             thumbnail,
             postUrl,
             postContent,
@@ -80,9 +86,15 @@ export default async function handler(req, res) {
           });
         }
       }
+
+      for (const item of category) {
+        retCategory.push(`${item["$"]["term"]}`);
+      }
+
       ret = {
         item: retContents[0],
         recentPost: retRecentPost,
+        category: retCategory,
       };
 
       res.status(200).end(JSON.stringify(ret));

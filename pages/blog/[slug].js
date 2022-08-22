@@ -15,6 +15,7 @@ const Detail = (data) => {
         items: {
           item: data.blog.item,
           recentPost: data.blog.recentPost,
+          category: data.blog.category,
         },
       })
     );
@@ -42,7 +43,7 @@ const Detail = (data) => {
 
 export async function getServerSideProps(context) {
   const resBlog = await fetch(
-    `${process.env.BASE_URL}/api/blog/${context.params.slug}`
+    `${process.env.NEXT_PUBLIC_BASE_API}/blog/${context.params.slug}`
   );
   const blog = await resBlog.json();
 

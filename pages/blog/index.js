@@ -28,7 +28,7 @@ const Blog = (data) => {
 };
 
 export async function getServerSideProps() {
-  const resBlog = await axios.post(`${process.env.BASE_URL}/api/blog`, {
+  const resBlog = await axios.post(`${process.env.NEXT_PUBLIC_BASE_API}/blog`, {
     start: "1",
     max: "1000",
   });

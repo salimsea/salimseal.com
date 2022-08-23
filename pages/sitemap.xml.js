@@ -23,17 +23,23 @@ export const getServerSideProps = async ({ res }) => {
       ].includes(staticPage);
     })
     .map((staticPagePath) => {
-      return `${process.env.BASE_URL}/${staticPagePath.replace(".js", "")}`;
+      return `${process.env.NEXT_PUBLIC_BASE_URL}/${staticPagePath.replace(
+        ".js",
+        ""
+      )}`;
     });
 
   const dynamicPaths = [];
-  const resBlog = await axios.post(`${process.env.BASE_URL}/api/blog`, {
-    start: "1",
-    max: "1000",
-  });
+  const resBlog = await axios.post(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`,
+    {
+      start: "1",
+      max: "1000",
+    }
+  );
   const blog = await resBlog.data.data;
   blog.retContents?.map((item) => {
-    dynamicPaths.push(`${process.env.BASE_URL}/blog/${item.slug}`);
+    dynamicPaths.push(`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${item.slug}`);
   });
 
   const allPaths = [...staticPaths, ...dynamicPaths];

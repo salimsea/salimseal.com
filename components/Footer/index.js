@@ -1,3 +1,4 @@
+import { URLCV } from "helpers/common";
 import Link from "next/link";
 import React from "react";
 
@@ -17,7 +18,7 @@ const Footer = () => {
               />
               <h4 className="text-copyright-salim mt-2">salimseal.com</h4>
               <button
-                onClick={() => (window.location = "#")}
+                onClick={() => (window.location = URLCV)}
                 className="btn-costum-primary-outline px-4 py-1 mt-2 mb-3"
               >
                 DOWNLOAD RESUME

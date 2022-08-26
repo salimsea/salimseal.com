@@ -5,13 +5,16 @@ import {
   LogoCsharp,
   LogoHtml5,
   LogoJquery,
+  LogoNextjs,
   LogoReact,
+  LogoRedux,
   ProjectDummy1,
   ProjectDummy10,
   ProjectDummy11,
   ProjectDummy12,
   ProjectDummy13,
   ProjectDummy14,
+  ProjectDummy15,
   ProjectDummy2,
   ProjectDummy3,
   ProjectDummy4,
@@ -25,6 +28,14 @@ import { FcAndroidOs, FcGlobe } from "react-icons/fc";
 import styles from "styles/Portfolio.module.scss";
 
 const jsonProduct = [
+  {
+    image: ProjectDummy15,
+    type: "Web Apps",
+    title: "TodoApp",
+    description:
+      "this app is the result of my learning make todo feature (create, read, update, delete) using nextjs and redux toolkit, you can see repository here: https://github.com/salimsea/learn-nextjs-todoapp",
+    tech: [LogoNextjs, LogoRedux],
+  },
   {
     image: ProjectDummy14,
     type: "Mobile Apps",
@@ -197,7 +208,7 @@ const SectionContent = () => {
                         width={60}
                         height={60}
                         src={v}
-                        className={styles["img-stack"]}
+                        className={`${styles["img-stack"]} pe-2`}
                       />
                     );
                   })}

@@ -1,25 +1,11 @@
-import React, { useState } from "react";
-import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
+import React from "react";
 import {
-  LogoCi,
-  LogoCsharp,
-  LogoHtml5,
-  LogoJquery,
-  LogoReact,
   ProjectDummy1,
   ProjectDummy2,
   ProjectDummy8,
-  SertifikatDicoding,
-  SertifikatGoogleAnalisAkademi,
-  SertifikatGoogleAnalisBeginner,
-  SertifikatGoogleDigitalGarage,
-  SertifikatPinjul,
-  SertifikatEBsiNetwork,
-  UserProfileDummy,
   ProjectDummy14,
 } from "assets";
 import Image from "next/image";
-import Slider from "react-slick";
 
 const SectionProject = ({ styles }) => {
   return (

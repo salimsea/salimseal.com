@@ -1,22 +1,12 @@
-import React, { useState } from "react";
-import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
+import React from "react";
 import {
   LogoCi,
   LogoCsharp,
   LogoHtml5,
   LogoJquery,
   LogoReact,
-  ProjectDummy1,
-  ProjectDummy2,
-  ProjectDummy8,
-  SertifikatDicoding,
-  SertifikatGoogleAnalisAkademi,
-  SertifikatGoogleAnalisBeginner,
-  SertifikatGoogleDigitalGarage,
-  SertifikatPinjul,
-  SertifikatEBsiNetwork,
-  UserProfileDummy,
-  ProjectDummy14,
+  LogoNextjs,
+  LogoRedux,
 } from "assets";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -86,6 +76,28 @@ const SectionSkill = ({ styles }) => {
               <div className={styles["card-skill"]} data-aos="fade-up">
                 <Image
                   src={LogoCi}
+                  width={100}
+                  height={100}
+                  className={`${styles["img-fluid"]}`}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div>
+              <div className={styles["card-skill"]} data-aos="fade-up">
+                <Image
+                  src={LogoNextjs}
+                  width={100}
+                  height={100}
+                  className={`${styles["img-fluid"]}`}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div>
+              <div className={styles["card-skill"]} data-aos="fade-up">
+                <Image
+                  src={LogoRedux}
                   width={100}
                   height={100}
                   className={`${styles["img-fluid"]}`}

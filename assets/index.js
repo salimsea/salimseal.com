@@ -13,6 +13,7 @@ import ProjectDummy11 from "./images/project11.png";
 import ProjectDummy12 from "./images/project12.png";
 import ProjectDummy13 from "./images/project13.png";
 import ProjectDummy14 from "./images/project14.png";
+import ProjectDummy15 from "./images/project15.png";
 import UserProfileDummy from "./images/user.png";
 import SertifikatDicoding from "./images/sertifikat-dicoding.png";
 import SertifikatPinjul from "./images/sertifikat-pinjul.png";
@@ -25,6 +26,8 @@ import LogoCi from "./images/logo-ci.png";
 import LogoJquery from "./images/logo-jquery.png";
 import LogoReact from "./images/logo-react.png";
 import LogoHtml5 from "./images/logo-html5.png";
+import LogoNextjs from "./images/logo-nextjs.png";
+import LogoRedux from "./images/logo-redux.png";
 import ILNotFound from "./images/notfound.png";
 import BlogDummy1 from "./images/blog1.png";
 import BlogDummy2 from "./images/blog2.png";
@@ -45,6 +48,7 @@ export {
   ProjectDummy12,
   ProjectDummy13,
   ProjectDummy14,
+  ProjectDummy15,
   UserProfileDummy,
   SertifikatDicoding,
   SertifikatPinjul,
@@ -57,6 +61,8 @@ export {
   LogoJquery,
   LogoReact,
   LogoHtml5,
+  LogoNextjs,
+  LogoRedux,
   ILNotFound,
   BlogDummy1,
   BlogDummy2,

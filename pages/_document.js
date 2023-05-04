@@ -30,7 +30,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+            src="https://www.googletagmanager.com/gtag/js?id=G-GXGRC1LEY1"
             strategy="afterInteractive"
           />
           <Script id="google-analytics" strategy="afterInteractive">

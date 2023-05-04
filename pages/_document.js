@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   render() {
@@ -28,6 +29,19 @@ class MyDocument extends Document {
           ></script>
           <Main />
           <NextScript />
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-GXGRC1LEY1');
+        `}
+          </Script>
         </body>
       </Html>
     );

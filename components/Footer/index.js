@@ -16,7 +16,9 @@ const Footer = () => {
                 width="50"
                 className="img-fluid"
               />
-              <h4 className="text-copyright-salim mt-2">salimseal.com</h4>
+              <h4 className="text-copyright-salim mt-2">
+                salimsea.netlify.app
+              </h4>
               <button
                 onClick={() => (window.location = URLCV)}
                 className="btn-costum-primary-outline px-4 py-1 mt-2 mb-3"

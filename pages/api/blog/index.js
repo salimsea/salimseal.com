@@ -12,7 +12,6 @@ export const config = {
 export default async function handler(req, res) {
   const promise = new Promise((resolve, reject) => {
     const form = new formidable.IncomingForm();
-
     var retContents = [],
       retCategory = [],
       ret = {};
@@ -21,14 +20,15 @@ export default async function handler(req, res) {
       if (err) reject(err);
       var start = 1,
         max = 100;
-      start = fields["start"];
-      max = fields["max"];
-      const response = axios
+      start = fields["start"] || 1;
+      max = fields["max"] || 100;
+
+      axios
         .get(
           `https://salim-tekno.blogspot.com/feeds/posts/default?start-index=${start}&max-results=${max}`
         )
-        .then((res) => {
-          var data = res.data;
+        .then((response) => {
+          var data = response.data;
           try {
             parseString(data, function (err, result) {
               var contents = result.feed["entry"],
@@ -77,8 +77,8 @@ export default async function handler(req, res) {
                   created: `${created.toLocaleString("en-US")}`,
                   updated: `${updated.toLocaleString("en-US")}`,
                   title: `${item["title"][0]._}`,
-                  titleSmall,
                   thumbnail,
+                  titleSmall,
                   postUrl,
                   postContent,
                   postContentSmall,
@@ -88,6 +88,7 @@ export default async function handler(req, res) {
               for (const item of category) {
                 retCategory.push(`${item["$"]["term"]}`);
               }
+
               var retData = {
                 retContents,
                 retCategory,
@@ -97,6 +98,7 @@ export default async function handler(req, res) {
                 message: null,
                 data: retData,
               };
+              resolve(ret);
             });
           } catch (err) {
             ret = {
@@ -104,15 +106,19 @@ export default async function handler(req, res) {
               message: "data not found",
               data: [],
             };
+            resolve(ret);
           }
-          resolve(ret);
         })
         .catch((err) => {
-          return null;
+          ret = {
+            error: true,
+            message: "request failed",
+            data: [],
+          };
+          resolve(ret);
         });
     });
   });
-
   return promise.then((ret) => {
     res.status(200).json(ret);
   });

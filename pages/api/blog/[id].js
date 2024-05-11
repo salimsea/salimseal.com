@@ -25,6 +25,7 @@ export default async function handler(req, res) {
         ret = {};
       for (const item of contents) {
         var slug = FUNCTextToSlug(item["title"][0]._);
+        // console.log(item["media:thumbnail"]);
         var thumbnail = `${item["media:thumbnail"][0]["$"]["url"].replace(
           "s72-c",
           "s1600"

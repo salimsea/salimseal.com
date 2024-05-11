@@ -8,6 +8,7 @@ import {
   LogoNextjs,
   LogoReact,
   LogoRedux,
+  ProjectAsySyirkah,
   ProjectDummy1,
   ProjectDummy10,
   ProjectDummy11,
@@ -22,6 +23,12 @@ import {
   ProjectDummy7,
   ProjectDummy8,
   ProjectDummy9,
+  ProjectMonitoring,
+  ProjectSOne,
+  ProjectSalam,
+  ProjectSatuDataMuba,
+  ProjectSurveyApp,
+  ProjectTaufiqi,
 } from "assets";
 import Image from "next/image";
 import { FcAndroidOs, FcGlobe } from "react-icons/fc";
@@ -29,11 +36,68 @@ import styles from "styles/Portfolio.module.scss";
 
 const jsonProduct = [
   {
+    image: ProjectSurveyApp,
+    type: "Web Apps",
+    title: "Survey Apps",
+    description:
+      "The website application is developed for the survey data collection system for the Musi Banyuasin district community. It is built using the following tech stack: C#, Web API Dotnet, and ReactJS.",
+    tech: [LogoCsharp, LogoReact, LogoRedux],
+  },
+  {
+    image: ProjectMonitoring,
+    type: "Web Apps",
+    title: "Dashboard Monitoring Survey",
+    description:
+      "The website application is developed for monitoring survey data for the Musi Banyuasin district community. It is built using the following tech stack: C#, Web API Dotnet, and ReactJS.",
+    tech: [LogoCsharp, LogoReact, LogoRedux],
+  },
+  {
+    image: ProjectSOne,
+    type: "Web Apps",
+    title: "S-ONE DATA",
+    description:
+      "This website application is the main product of PT Sawerigading Multi Kreasi. It is an information portal for government data developed using the following tech stack: C#, Web API Dotnet, NextJs, and React Query.",
+    tech: [LogoNextjs, LogoCsharp],
+  },
+  {
+    image: ProjectSatuDataMuba,
+    type: "Web Apps",
+    title: "One Data Muba V2",
+    description:
+      "The website application is developed as an information portal for government data using the following tech stack: C#, Web API Dotnet, NextJs, and React Query.",
+    tech: [LogoNextjs, LogoCsharp],
+  },
+  {
+    image: ProjectAsySyirkah,
+    type: "Mobile Apps",
+    title: "Asysyirkah Apps",
+    description:
+      "The mobile application is developed for Shariah investment finance system using the following tech stack: C#, Web API Dotnet, and React Native",
+    tech: [LogoCsharp, LogoReact, LogoRedux],
+  },
+  {
+    image: ProjectSalam,
+    type: "Mobile Apps",
+    title: "Salam Apps",
+    description:
+      "The mobile application is developed for employee attendance with face scanning and geolocation for attendance location using the following tech stack: C#, Web API Dotnet, and React Native",
+    tech: [LogoCsharp, LogoReact, LogoRedux],
+  },
+  {
+    image: ProjectTaufiqi,
+    type: "Web Apps",
+    title: "Taufiqi School",
+    description:
+      "The website application is developed for school information and registration (PPDB) using the following tech stack: C#, Web API Dotnet, and ReactJS",
+    tech: [LogoCsharp, LogoReact],
+  },
+  ///new
+  {
     image: ProjectDummy15,
     type: "Web Apps",
     title: "TodoApp",
     description:
-      "this app is the result of my learning make todo feature (create, read, update, delete) using nextjs and redux toolkit, you can see repository here: https://github.com/salimsea/learn-nextjs-todoapp",
+      "This app is the result of my learning make todo feature (create, read, update, delete) using nextjs and redux toolkit, you can see repository here: https://github.com/salimsea/learn-nextjs-todoapp",
     tech: [LogoNextjs, LogoRedux],
   },
   {

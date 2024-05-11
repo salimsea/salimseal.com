@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setDataBlogs } from "redux/slice/blogSlice";
 
 const Blog = (data) => {
+  console.log(data.blog);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(

@@ -1,7 +1,6 @@
 import create from "zustand";
 
-export const URLCV =
-  "https://drive.google.com/file/d/1xw6JMN5PUr-_-lpCS8pOJDqmvCMBQ3Ps/view?usp=share_link";
+export const URLCV = "https://s.id/cv-salim-segaf-alqosam";
 export const URLLINKEDIN = "https://www.linkedin.com/in/salimsea/";
 export const URLGITHUB = "https://github.com/salimsea";
 export const URLFACEBOOK = "https://www.facebook.com/salimsea";

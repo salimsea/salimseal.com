@@ -8,6 +8,15 @@ import { getDataBlogs } from "redux/action/blogAction";
 import Link from "next/link";
 import { setFormBlog } from "redux/slice/blogSlice";
 
+function getRandomIndices(length, count) {
+  const indices = new Set();
+  while (indices.size < count) {
+    const randomIndex = Math.floor(Math.random() * length);
+    indices.add(randomIndex);
+  }
+  return Array.from(indices);
+}
+
 const SectionEntry = () => {
   const { dataBlogs, formBlog } = useSelector((state) => state.blog);
   const dispatch = useDispatch();
@@ -18,6 +27,10 @@ const SectionEntry = () => {
           ?.toLowerCase()
           .includes(formBlog.formBlog?.search.toLowerCase())
       );
+
+  const randomIndices = dataBlogs.items?.contents
+    ? getRandomIndices(dataBlogs.items.contents.length, 10)
+    : [];
   return (
     <section className={styles["blog"]}>
       <div className="container">
@@ -40,7 +53,7 @@ const SectionEntry = () => {
               {!dataBlogs.error && datas?.length !== 0 ? (
                 datas?.map((v, i) => {
                   return (
-                    <div key={i} className="col-md-6">
+                    <div key={i} className="col-md-6" data-aos="flip-left">
                       <Link href={`blog/${v.slug}`}>
                         <div className={styles["card-post"]}>
                           <Image
@@ -88,31 +101,34 @@ const SectionEntry = () => {
           </div>
           <div className="col-md-4">
             <div className={styles["card-recent-post"]}>
-              <h3>Recent Post</h3>
+              <h3>More Post</h3>
               <div className="mt-3">
                 {!dataBlogs.error &&
-                  dataBlogs.items?.contents?.map((v, i) => {
+                  randomIndices.map((i) => {
+                    const v = dataBlogs.items.contents[i];
                     return (
-                      i < 5 && (
-                        <div key={i} className={`row ${styles["item-card"]}`}>
-                          <div className="col align-self-center">
-                            <Image
-                              width={400}
-                              height={250}
-                              src={v.thumbnail}
-                              className={styles["img-recentpost"]}
-                              alt=""
-                            />
-                          </div>
-                          <div className="col">
-                            <small>{v.updated}</small>
-                            <Link href={`blog/${v.slug}`}>
-                              <h6>{v.titleSmall}</h6>
-                            </Link>
-                            <p>{v.postContentSmall}</p>
-                          </div>
+                      <div
+                        key={i}
+                        className={`row ${styles["item-card"]}`}
+                        data-aos="fade-left"
+                      >
+                        <div className="col align-self-center">
+                          <Image
+                            width={400}
+                            height={250}
+                            src={v.thumbnail}
+                            className={styles["img-recentpost"]}
+                            alt=""
+                          />
                         </div>
-                      )
+                        <div className="col">
+                          <small>{v.updated}</small>
+                          <Link href={`blog/${v.slug}`}>
+                            <h6>{v.titleSmall}</h6>
+                          </Link>
+                          <p>{v.postContentSmall}</p>
+                        </div>
+                      </div>
                     );
                   })}
               </div>
@@ -124,7 +140,7 @@ const SectionEntry = () => {
                   {!dataBlogs.error &&
                     dataBlogs.items?.category?.map((v, i) => {
                       return (
-                        <li key={i}>
+                        <li key={i} data-aos="fade-up">
                           <div className="bulet--small"></div>
                           {v}
                         </li>

@@ -147,6 +147,10 @@ const jsonMenus = [
     title: "Blog",
     path: "/blog",
   },
+  // {
+  //   title: "Tools",
+  //   path: "/tools",
+  // },
 ];
 
 const MyNav = () => {

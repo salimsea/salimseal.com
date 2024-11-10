@@ -46,6 +46,7 @@ import ILNotFound from "./images/notfound.png";
 import BlogDummy1 from "./images/blog1.png";
 import BlogDummy2 from "./images/blog2.png";
 import IMGNotFound from "./images/img-notfound.png";
+import IMGComingSoon from "./images/img-coming-soon.png";
 
 export {
   Logo,
@@ -89,4 +90,5 @@ export {
   BlogDummy1,
   BlogDummy2,
   IMGNotFound,
+  IMGComingSoon,
 };

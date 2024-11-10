@@ -24,8 +24,48 @@ import {
   URLTWITTER,
 } from "helpers/common";
 
+const jsonDExperiences = [
+  {
+    id: 0,
+    company: "PT Sinergi Informatika Semen Indonesia",
+    worktype: "Full-Time",
+    dateFrom: "Jun 2024",
+    dateEnd: "Present",
+    techstack: ".NET Framework, SAP, JQuery, SQL Server, PHP, MySQL",
+    role: ".NET Developer",
+  },
+  {
+    id: 1,
+    company: "PT Sawerigading Multi Kreasi",
+    worktype: "Full-Time",
+    dateFrom: "Apr 2019",
+    dateEnd: "Jul 2024",
+    techstack: "C#, React.js, React Native, JQuery, PostgreSQL",
+    role: "Fullstack Developer & Maintener Web, Mobile apps",
+  },
+  {
+    id: 2,
+    company:
+      "Ministry of Investment / Indonesia Investment Coordinating Board (BKPM)",
+    worktype: "Part-Time",
+    dateFrom: "Jan 2023",
+    dateEnd: "Dec 2023",
+    techstack: "C#, Gatsby.JS, PostgreSQL",
+    role: "Technical Programmer (P2D)",
+  },
+  {
+    id: 3,
+    company: "Dropshipedia",
+    worktype: "Part-Time",
+    dateFrom: "Jan 2019",
+    dateEnd: "Dec 2023",
+    techstack: "C#, Gatsby.JS, PostgreSQL",
+    role: "Fullstack Developer & Maintenance Engineer",
+  },
+];
+
 const SectionDescription = ({ styles }) => {
-  const [isTab, setIsTab] = useState(1);
+  const [isTab, setIsTab] = useState(2);
   return (
     <section className={styles["description"]}>
       <div className="container">
@@ -104,7 +144,8 @@ const SectionDescription = ({ styles }) => {
                 <br />
                 <br />
                 Techstack i like to use html, css, javascript, reactjs, react
-                native, csharp, php, postgresql, mysql.
+                native, csharp, php, postgresql, mysql, .net framework, .net
+                core.
               </p>
               <div className="mt-5">
                 <button
@@ -200,42 +241,9 @@ const SectionDescription = ({ styles }) => {
                   </TabPane>
                   <TabPane tabId="2">
                     <ul>
-                      <li>
-                        <div className="bulet">
-                          <FaArrowRight color="#FFFFFF" size={15} />
-                        </div>
-                        <p>
-                          <a href="https://swg.co.id">
-                            PT Sawerigading Multi Kreasi
-                          </a>
-                          <br />
-                          <small>
-                            <FaRegClock color="#2C2C2C" /> Apr 2019 - Present
-                          </small>
-                          <br />
-                          Working with tech stacks : C#, React.js, React Native,
-                          JQuery, PostgreSQL. <br />
-                          Fullstack Developer & Maintener Web & Mobile apps
-                        </p>
-                      </li>
-                      <li>
-                        <div className="bulet">
-                          <FaArrowRight color="#FFFFFF" size={15} />
-                        </div>
-                        <p>
-                          <a href="https://dropshipedia.id">
-                            PT Digital Dropship Indonesia
-                          </a>
-                          <br />
-                          <small>
-                            <FaRegClock color="#2C2C2C" /> Jan 2019 - Present
-                          </small>
-                          <br />
-                          Working with tech stacks : C#, React.js, React Native,
-                          PostgreSQL, SignalR. <br />
-                          Fullstack Developer & Maintener Web & Mobile apps
-                        </p>
-                      </li>
+                      {jsonDExperiences.map((v, i) => {
+                        return <ItemExperience key={i} data={v} />;
+                      })}
                     </ul>
                   </TabPane>
                 </TabContent>
@@ -245,6 +253,28 @@ const SectionDescription = ({ styles }) => {
         </div>
       </div>
     </section>
+  );
+};
+
+const ItemExperience = ({ data }) => {
+  return (
+    <li>
+      <div className="bulet">
+        <FaArrowRight color="#FFFFFF" size={15} />
+      </div>
+      <p>
+        <a href="#">{data.company}</a>
+        <br />
+        <small>
+          <FaRegClock color="#2C2C2C" /> ({data.worktype}) {data.dateFrom} -{" "}
+          {data.dateEnd}
+        </small>
+        <br />
+        Role Position: {data.role}
+        <br />
+        Working with tech stacks: {data.techstack}.
+      </p>
+    </li>
   );
 };
 

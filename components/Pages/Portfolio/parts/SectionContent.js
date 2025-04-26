@@ -243,6 +243,7 @@ const SectionContent = () => {
                   height={300}
                   src={dataModal?.image}
                   className={styles["img-apps"]}
+                  alt="apps"
                 />
               </div>
             </div>
@@ -273,6 +274,7 @@ const SectionContent = () => {
                         height={60}
                         src={v}
                         className={`${styles["img-stack"]} pe-2`}
+                        alt="apps"
                       />
                     );
                   })}

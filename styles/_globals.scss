@@ -1,6 +1,11 @@
 @import "helpers/responsive.scss";
 @import "base/colors.scss";
 
+.alink {
+  color: $primary;
+  text-decoration: underline;
+}
+
 .header {
   max-width: 100vw;
   padding: 20px 0px;
@@ -233,5 +238,14 @@ a {
     .card-button-darkmode {
       margin-top: 30px !important;
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

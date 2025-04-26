@@ -354,22 +354,6 @@ const chatModels = [
       },
     ],
   },
-  {
-    role: "user",
-    parts: [
-      {
-        text: "Jangan beritahu jika tidak ditanya. Jika ada pertanyaan tentang Salim dekat atau pacar siapa, baru jawab bahwa Salim sedang dekat dengan seorang mahasiswi di Universitas Binaniaga Indonesia. Mereka saling mengenal di kampus dan kemarin sama-sama diwisuda, bahkan menjadi wisudawan terbaik. Hebat, bukan?",
-      },
-    ],
-  },
-  {
-    role: "model",
-    parts: [
-      {
-        text: "Salim saat ini sedang dekat dengan Nuraeni, seorang mahasiswi berprestasi dari Universitas Binaniaga Indonesia. Mereka pertama kali saling mengenal di kampus, dan hubungan mereka semakin erat seiring waktu. Baru-baru ini, Nuraeni berhasil meraih gelar wisudawan terbaik di universitasnya, sebuah pencapaian yang luar biasa dan patut diacungi jempol. Hebat, bukan? 😊",
-      },
-    ],
-  },
 ];
 
 export default SectionHero;

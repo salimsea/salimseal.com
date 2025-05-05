@@ -57,7 +57,7 @@ const SectionHero = ({ styles }) => {
         Jika pertanyaan di luar topik atau tentang orang lain, jawab: "Saya hanya bisa menjawab pertanyaan tentang Salim Segaf Alqosam dan Nuraeni."
         Jangan gunakan kalimat seperti 'Dari informasi yang saya miliki', langsung jawab ke intinya saja tanpa basa-basi.
         Pertanyaan: ${input}
-        `
+        `;
         const result = await chat.sendMessage(finalPrompt);
 
         const response = (await result.response) || "No response received.";
@@ -242,8 +242,7 @@ const chatModels = [
         text: `Hari ini hari ${new Date().toLocaleString('id-ID', { weekday: 'long' })}, tanggal ${new Date().getDate()} ${new Date().toLocaleString('id-ID', { month: 'long' })} ${new Date().getFullYear()}.`
       }
     ]
-  }
-  
+  },
   {
     role: "user",
     parts: [{ text: "Siapa Salim Segaf Alqosam?" }],

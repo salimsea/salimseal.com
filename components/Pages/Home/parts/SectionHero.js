@@ -52,9 +52,11 @@ const SectionHero = ({ styles }) => {
 
         const finalPrompt = `
         Jawablah pertanyaan menggunakan bahasa yang sama dengan bahasa pertanyaan (misal: Indonesia, Inggris, Sunda, dll).
-        Jika pertanyaan menanyakan tanggal atau waktu saat ini, anggap hari ini adalah ${new Date().getDate()}-${new Date().getMonth() + 1}-${new Date().getFullYear()}.
-        Hanya jawab jika pertanyaan berkaitan dengan Salim Segaf Alqosam dan Nuraeni.
-        Jika pertanyaan di luar topik atau tentang orang lain, jawab: "Saya hanya bisa menjawab pertanyaan tentang Salim Segaf Alqosam dan Nuraeni."
+        Jika pertanyaan menanyakan tanggal atau waktu saat ini, anggap hari ini adalah ${new Date().getDate()}-${
+          new Date().getMonth() + 1
+        }-${new Date().getFullYear()}.
+        Hanya jawab jika pertanyaan berkaitan dengan Salim Segaf Alqosam (software engineer, Dotnet Developer @ SISI, pengalaman di Next.js, React Native, dan sejenisnya).
+        Jika pertanyaan di luar topik atau tentang orang lain, jawab: "I can only answer questions about Salim Segaf Alqosam. 😔"
         Jangan gunakan kalimat seperti 'Dari informasi yang saya miliki', langsung jawab ke intinya saja tanpa basa-basi.
         Pertanyaan: ${input}
         `;
@@ -270,12 +272,6 @@ const chatModels = [
       },
     ],
   },
-  {
-    "role": "user",
-    "parts": [{
-      "text": "Tolong pahami dan simpan informasi berikut tentang Nuraeni, seorang lulusan Universitas Binaniaga Indonesia:\n\nNuraeni adalah Sarjana Komputer yang lulus dari Universitas Binaniaga Indonesia (UNBIN) pada 20 Februari 2025. Ia pernah menjabat sebagai Computer Lab Assistant di kampusnya dan dikenal sebagai data enthusiast serta IT enthusiast. Pada wisuda 2025, Nuraeni mendapatkan penghargaan sebagai Wisudawan Terbaik dan mewakili teman-teman wisudawan untuk menyampaikan pidato terima kasih.\n\nNuraeni menulis skripsi berjudul 'Penerapan Metode K-Means pada Pemetaan Objek Wisata untuk Rekomendasi Prioritas Pengembangan Pariwisata' di bawah bimbingan Dwi Rahmiyati. Penelitian ini menggunakan data objek wisata di wilayah Bogor dan menghasilkan aplikasi pemetaan wisata berbasis algoritma K-Means yang telah diuji sangat layak digunakan (kelayakan aplikasi 100% dan skor kepuasan pengguna 86%). Hasil penelitian ini juga dipublikasikan di jurnal ilmiah IKOMTI pada Februari 2025. Nuraeni memiliki minat khusus di bidang data mining, information systems, dan pengembangan aplikasi berbasis prototyping.\n\nNuraeni aktif membagikan pencapaian akademiknya di LinkedIn dan dikenal memiliki semangat belajar tinggi, kolaboratif, serta berkomitmen untuk terus berkontribusi dalam pengembangan teknologi dan masyarakat. Informasi lebih lanjut tentang Nuraeni dapat ditemukan di LinkedIn: https://www.linkedin.com/posts/nuraeni3005_graduation-wisuda2025-wisuda-activity-7303017483144216576-zDXs\n\nJika ada pertanyaan tentang Nuraeni, silakan jawab berdasarkan informasi di atas dan tanggal saat ini adalah Senin, 5 Mei 2025."
-    }]
-  }
 ];
 
 export default SectionHero;

@@ -11,7 +11,7 @@ const Layout = (props) => {
           name="google-site-verification"
           content="oq7c1Rw3isVAhud2eLgArWgSZ5q4KQ01lk7icr3n-gw"
         />
-        <meta name="google-adsense-account" content="ca-pub-3080709829496816">
+        <meta name="google-adsense-account" content="ca-pub-3080709829496816" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={`${props?.pageDescription}`} />
         <meta

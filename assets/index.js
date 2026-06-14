@@ -21,6 +21,8 @@ import ProjectSalam from "./images/project/projectsalam.png";
 import ProjectTaufiqi from "./images/project/projecttaufiqi.png";
 import ProjectSurveyApp from "./images/project/projectsurveyapp.png";
 import ProjectMonitoring from "./images/project/projectmonitoring.png";
+import ProjectSellarispos from "./images/project/projectsellarispos.png";
+import ProjectSellariserp from "./images/project/projectsellariserp.png";
 
 //certificate
 import SertifikatDicoding from "./images/certificate/sertifikat-dicoding.png";
@@ -72,6 +74,8 @@ export {
   ProjectTaufiqi,
   ProjectSurveyApp,
   ProjectMonitoring,
+  ProjectSellarispos,
+  ProjectSellariserp,
   UserProfileDummy,
   SertifikatDicoding,
   SertifikatPinjul,

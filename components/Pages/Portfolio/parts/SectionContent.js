@@ -27,6 +27,8 @@ import {
   ProjectSOne,
   ProjectSalam,
   ProjectSatuDataMuba,
+  ProjectSellariserp,
+  ProjectSellarispos,
   ProjectSurveyApp,
   ProjectTaufiqi,
 } from "assets";
@@ -35,6 +37,30 @@ import { FcAndroidOs, FcGlobe } from "react-icons/fc";
 import styles from "styles/Portfolio.module.scss";
 
 const jsonProduct = [
+  {
+    image: ProjectSellarispos,
+    type: "Web, Android Apps",
+    title: "Sellaris POS",
+    description:
+      "The Sellaris POS application is developed as a point-of-sale and business management system designed to help SMEs manage sales transactions, inventory, and daily business operations efficiently. It is built using the following tech stack: Express.js, Next.js, Capacitor, and MySQL.",
+    tech: [LogoNextjs, LogoReact],
+  },
+  {
+    image: ProjectSellariserp,
+    type: "Web, Desktop, Android Apps",
+    title: "Sellaris ERP",
+    description:
+      "The Sellaris ERP application is developed as an enterprise resource planning system designed to streamline and integrate various business processes, including sales, purchasing, inventory, finance, and operational management. It is built using the following tech stack: Express.js, Next.js, Electron, and MySQL",
+    tech: [LogoNextjs, LogoReact],
+  },
+  {
+    image: ProjectSurveyApp,
+    type: "Web Apps",
+    title: "Survey Apps",
+    description:
+      "The website application is developed for the survey data collection system for the Musi Banyuasin district community. It is built using the following tech stack: C#, Web API Dotnet, and ReactJS.",
+    tech: [LogoCsharp, LogoReact, LogoRedux],
+  },
   {
     image: ProjectSurveyApp,
     type: "Web Apps",

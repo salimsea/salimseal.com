@@ -114,7 +114,7 @@ const SectionHero = ({ styles }) => {
             className="alink"
           >
             {match[2]}
-          </a>
+          </a>,
         );
       }
       lastIndex = pattern.lastIndex;
@@ -139,7 +139,7 @@ const SectionHero = ({ styles }) => {
           I’am a front-end designer & back-end developer <br />
           From Indonesia 🇮🇩
         </p>
-        <div className={styles["hero-input"]}>
+        {/* <div className={styles["hero-input"]}>
           <div className={styles["input-container"]}>
             <label className={styles["input-label"]}>USE AI 🤖</label>
             <input
@@ -160,11 +160,11 @@ const SectionHero = ({ styles }) => {
               Ask ✨
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Modal Chat */}
-      <Modal centered size="md" isOpen={modal} toggle={toggleModal}>
+      {/* <Modal centered size="md" isOpen={modal} toggle={toggleModal}>
         <ModalBody className={styles["chat-modal"]}>
           <div className={styles["chat-header"]}>
             <h5>Chat with AI ✨</h5>
@@ -227,7 +227,7 @@ const SectionHero = ({ styles }) => {
             double-check any important details.
           </p>
         </ModalBody>
-      </Modal>
+      </Modal> */}
     </section>
   );
 };
@@ -241,9 +241,9 @@ const chatModels = [
     role: "model",
     parts: [
       {
-        text: `Hari ini hari ${new Date().toLocaleString('id-ID', { weekday: 'long' })}, tanggal ${new Date().getDate()} ${new Date().toLocaleString('id-ID', { month: 'long' })} ${new Date().getFullYear()}.`
-      }
-    ]
+        text: `Hari ini hari ${new Date().toLocaleString("id-ID", { weekday: "long" })}, tanggal ${new Date().getDate()} ${new Date().toLocaleString("id-ID", { month: "long" })} ${new Date().getFullYear()}.`,
+      },
+    ],
   },
   {
     role: "user",

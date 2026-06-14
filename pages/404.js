@@ -11,6 +11,7 @@ const NotFound = () => {
           width={200}
           height={200}
           className="img-fluid"
+          alt="Not Found"
         />
         <br />
         <p className="text-center pt-3">

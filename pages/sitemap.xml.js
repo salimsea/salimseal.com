@@ -1,46 +1,37 @@
-import * as fs from "fs";
 import axios from "axios";
+
 const Sitemap = () => {
   return null;
 };
 
 export const getServerSideProps = async ({ res }) => {
-  const BASE_DIR = process.env.NODE_ENV === "production" ? "./" : "pages";
-  const staticPaths = fs
-    .readdirSync(BASE_DIR)
-    .filter((staticPage) => {
-      return ![
-        "api",
-        "_app.js",
-        "_document.js",
-        "404.js",
-        ".env",
-        ".netlify",
-        ".next",
-        "___netlify-handler",
-        "node_modules",
-        "packageon",
-      ].includes(staticPage);
-    })
-    .map((staticPagePath) => {
-      return `${process.env.NEXT_PUBLIC_BASE_URL}/${staticPagePath.replace(
-        ".js",
-        ""
-      )}`;
-    });
+  const staticPaths = [
+    "",
+    "/portfolio",
+    "/tools",
+    "/blog",
+  ].map((path) => `${process.env.NEXT_PUBLIC_BASE_URL}${path}`);
 
   const dynamicPaths = [];
-  const resBlog = await axios.post(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`,
-    {
-      start: "1",
-      max: "1000",
+  try {
+    const resBlog = await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`,
+      {
+        start: "1",
+        max: "1000",
+      }
+    );
+    const blog = resBlog.data?.data;
+    if (blog && blog.retContents) {
+      blog.retContents.forEach((item) => {
+        if (item.slug) {
+          dynamicPaths.push(`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${item.slug}`);
+        }
+      });
     }
-  );
-  const blog = await resBlog.data.data;
-  blog.retContents?.map((item) => {
-    dynamicPaths.push(`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${item.slug}`);
-  });
+  } catch (err) {
+    console.error("Error fetching dynamic paths for sitemap:", err);
+  }
 
   const allPaths = [...staticPaths, ...dynamicPaths];
 

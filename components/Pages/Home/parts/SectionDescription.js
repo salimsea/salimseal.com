@@ -27,40 +27,66 @@ import {
 const jsonDExperiences = [
   {
     id: 0,
-    company: "PT Sinergi Informatika Semen Indonesia",
+    company: "Sellaris Studio",
     worktype: "Full-Time",
-    dateFrom: "Jun 2024",
+    dateFrom: "May 2026",
     dateEnd: "Present",
-    techstack: ".NET Framework, SAP, JQuery, SQL Server, PHP, MySQL",
-    role: ".NET Developer",
+    techstack: "Express.js, Next.js, MySQL, POS & ERP Systems",
+    role: "Software Engineer",
   },
   {
     id: 1,
+    company: "PT Berlian Sistem Informasi",
+    worktype: "Full-Time",
+    dateFrom: "Oct 2025",
+    dateEnd: "Present",
+    techstack: ".NET 9/10, CQRS, DDD, SQL Server, Containerization (NEW DNET Platform for Mitsubishi)",
+    role: "Software Engineer",
+  },
+  {
+    id: 2,
+    company: "PT Tower Bersama Infrastructure, Tbk",
+    worktype: "Full-Time",
+    dateFrom: "May 2025",
+    dateEnd: "Oct 2025",
+    techstack: ".NET Framework 4.8, VB.NET, Balanced Scorecard App",
+    role: "IT Developer",
+  },
+  {
+    id: 3,
+    company: "PT Sinergi Informatika Semen Indonesia",
+    worktype: "Full-Time",
+    dateFrom: "Jul 2024",
+    dateEnd: "May 2025",
+    techstack: ".NET, SAP Integration, Web Applications",
+    role: "Programmer .NET",
+  },
+  {
+    id: 4,
     company: "PT Sawerigading Multi Kreasi",
     worktype: "Full-Time",
     dateFrom: "Apr 2019",
     dateEnd: "Jul 2024",
-    techstack: "C#, React.js, React Native, JQuery, PostgreSQL",
-    role: "Fullstack Developer & Maintener Web, Mobile apps",
+    techstack: "C#, React.js, React Native, API Integration, DevOps, Jenkins, Docker, Git, GCP, Nginx",
+    role: "Software Engineer & Junior Programmer (Apr 2019 - Apr 2021 & May 2021 - Jul 2024)",
   },
   {
-    id: 2,
-    company:
-      "Ministry of Investment / Indonesia Investment Coordinating Board (BKPM)",
+    id: 5,
+    company: "Indonesia Investment Coordinating Board (BKPM)",
     worktype: "Part-Time",
     dateFrom: "Jan 2023",
     dateEnd: "Dec 2023",
-    techstack: "C#, Gatsby.JS, PostgreSQL",
-    role: "Technical Programmer (P2D)",
+    techstack: "C#, Gatsby.JS, PostgreSQL (Potensi Investasi Daerah / PIR App)",
+    role: "Software Engineer",
   },
   {
-    id: 3,
+    id: 6,
     company: "Dropshipedia",
     worktype: "Part-Time",
     dateFrom: "Jan 2019",
     dateEnd: "Dec 2023",
-    techstack: "C#, Gatsby.JS, PostgreSQL",
-    role: "Fullstack Developer & Maintenance Engineer",
+    techstack: "Laravel, Vue.js, PHP, MySQL",
+    role: "Fullstack Developer",
   },
 ];
 
@@ -143,9 +169,7 @@ const SectionDescription = ({ styles }) => {
                 team.
                 <br />
                 <br />
-                Techstack i like to use html, css, javascript, reactjs, react
-                native, csharp, php, postgresql, mysql, .net framework, .net
-                core.
+                Techstack i like to use: .NET (5–10), C#, PHP (Laravel/CodeIgniter), JavaScript, React (JS/Native), Next.js, HTML/CSS, GCP, Docker, Jenkins, SQL Server, PostgreSQL, MySQL.
               </p>
               <div className="mt-5">
                 <button

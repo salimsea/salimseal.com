@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-const { setDataBlogs, setDataBlog } = require("redux/slice/blogSlice");
+const { setDataBlogs, setDataBlog, appendDataBlogs } = require("redux/slice/blogSlice");
 
 export const getDataBlogs = () => {
   return (dispatch) => {
@@ -21,6 +21,35 @@ export const getDataBlogs = () => {
             msg: err.message,
           })
         );
+      });
+  };
+};
+
+export const getMoreDataBlogs = (start, max = 10) => {
+  return (dispatch) => {
+    return axios
+      .post(`${process.env.NEXT_PUBLIC_BASE_API}/blog`, {
+        start: String(start),
+        max: String(max),
+      })
+      .then((res) => {
+        dispatch(
+          appendDataBlogs({
+            items: {
+              contents: res.data.data.retContents,
+              category: res.data.data.retCategory,
+            },
+          })
+        );
+        return res.data.data.retContents;
+      })
+      .catch((err) => {
+        dispatch(
+          appendDataBlogs({
+            msg: err.message,
+          })
+        );
+        throw err;
       });
   };
 };

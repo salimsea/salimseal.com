@@ -12,6 +12,7 @@ const Portfolio = () => {
             width={200}
             height={200}
             className="img-fluid"
+            alt="Coming Soon"
           />
           <br />
           <p className="text-center ">Coming Soon</p>

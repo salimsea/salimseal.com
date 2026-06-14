@@ -4,18 +4,22 @@ const Sitemap = () => {
   return null;
 };
 
-export const getServerSideProps = async ({ res }) => {
+export const getServerSideProps = async ({ req, res }) => {
+  const protocol = req.headers["x-forwarded-proto"] || (req.connection?.encrypted ? "https" : "http");
+  const host = req.headers.host;
+  const baseUrl = `${protocol}://${host}`;
+
   const staticPaths = [
     "",
     "/portfolio",
     "/tools",
     "/blog",
-  ].map((path) => `${process.env.NEXT_PUBLIC_BASE_URL}${path}`);
+  ].map((path) => `${baseUrl}${path}`);
 
   const dynamicPaths = [];
   try {
     const resBlog = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`,
+      `${baseUrl}/api/blog`,
       {
         start: "1",
         max: "1000",
@@ -25,7 +29,7 @@ export const getServerSideProps = async ({ res }) => {
     if (blog && blog.retContents) {
       blog.retContents.forEach((item) => {
         if (item.slug) {
-          dynamicPaths.push(`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${item.slug}`);
+          dynamicPaths.push(`${baseUrl}/blog/${item.slug}`);
         }
       });
     }
